@@ -38,8 +38,8 @@
 
   const refusalButtonLabels = [
     "아니요",
-    "아니요 (잡을 수 있으면 잡아봐요)",
-    "아니요 (거절 기능 없음)"
+    "아니요",
+    "아니요"
   ];
 
   const cancelLabels = [
