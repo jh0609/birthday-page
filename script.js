@@ -105,6 +105,11 @@
   function moveNoButton() {
     if (reducedMotion.matches || !escapeZone) return;
 
+    const previousCenter = {
+      x: noButton.offsetLeft + noButton.offsetWidth / 2,
+      y: noButton.offsetTop + noButton.offsetHeight / 2
+    };
+
     if (noButton.classList.contains("is-escaping")) {
       const ghost = document.createElement("span");
       ghost.className = "escape-ghost";
@@ -118,8 +123,40 @@
     noButton.classList.add("is-escaping");
     const maxX = Math.max(0, escapeZone.clientWidth - noButton.offsetWidth);
     const maxY = Math.max(0, escapeZone.clientHeight - noButton.offsetHeight);
-    noButton.style.left = `${Math.round(Math.random() * maxX)}px`;
-    noButton.style.top = `${Math.round(Math.random() * maxY)}px`;
+    const minY = Math.min(64, maxY);
+    const minimumDistance = Math.min(110, Math.hypot(maxX, maxY) * 0.55);
+    let farthestCandidate = null;
+    const validCandidates = [];
+    const positionCandidates = [
+      { x: 0, y: minY },
+      { x: maxX, y: minY },
+      { x: 0, y: maxY },
+      { x: maxX, y: maxY }
+    ];
+
+    for (let index = 0; index < 28; index += 1) {
+      positionCandidates.push({
+        x: Math.random() * maxX,
+        y: minY + Math.random() * Math.max(0, maxY - minY)
+      });
+    }
+
+    positionCandidates.forEach((candidate) => {
+      const centerX = candidate.x + noButton.offsetWidth / 2;
+      const centerY = candidate.y + noButton.offsetHeight / 2;
+      candidate.distance = Math.hypot(centerX - previousCenter.x, centerY - previousCenter.y);
+
+      if (!farthestCandidate || candidate.distance > farthestCandidate.distance) {
+        farthestCandidate = candidate;
+      }
+      if (candidate.distance >= minimumDistance) validCandidates.push(candidate);
+    });
+
+    const nextPosition = validCandidates.length
+      ? validCandidates[Math.floor(Math.random() * validCandidates.length)]
+      : farthestCandidate;
+    noButton.style.left = `${Math.round(nextPosition.x)}px`;
+    noButton.style.top = `${Math.round(nextPosition.y)}px`;
     noButton.style.transform = `rotate(${Math.round(Math.random() * 22 - 11)}deg) scale(${0.92 + Math.random() * 0.1})`;
   }
 
