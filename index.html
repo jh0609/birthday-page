@@ -36,7 +36,7 @@
 
         <section class="screen game-screen" data-screen="game" aria-labelledby="game-title" hidden>
           <p class="eyebrow">긴급 거절 심사 절차</p>
-          <h2 id="game-title">사랑(똥) 피하기</h2>
+          <h2 id="game-title">사랑 피하기</h2>
           <p class="lead game-description">준형이의 사랑을 30초 동안 피하면<br>정말 거절할 수 있습니다.</p>
 
           <div class="game-card">
@@ -47,7 +47,14 @@
             <div id="game-field" class="game-field" role="application" aria-label="떨어지는 사랑 피하기 게임" tabindex="0">
               <div class="game-cloud cloud-one" aria-hidden="true">☁️</div>
               <div class="game-cloud cloud-two" aria-hidden="true">☁️</div>
-              <div id="game-player" class="game-player" aria-label="성빈이">성빈</div>
+              <div id="game-player" class="game-player" aria-label="성빈이 캐릭터">
+                <span class="girl-head" aria-hidden="true"></span>
+                <span class="girl-body" aria-hidden="true"></span>
+                <span class="girl-arm girl-arm-left" aria-hidden="true"></span>
+                <span class="girl-arm girl-arm-right" aria-hidden="true"></span>
+                <span class="girl-leg girl-leg-left" aria-hidden="true"></span>
+                <span class="girl-leg girl-leg-right" aria-hidden="true"></span>
+              </div>
               <div id="game-overlay" class="game-overlay">
                 <p id="game-result">손가락으로 성빈이를 좌우로 움직여<br>사랑을 피해보세요.</p>
                 <button class="button button-primary" id="game-start-button" type="button">거절 도전 시작</button>
