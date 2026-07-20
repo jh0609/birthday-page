@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#fff6ed">
+    <meta name="description" content="성빈이 전용 생일 축하 페이지">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <title>성빈이 전용 생일 페이지 🌹</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="tiny-header" aria-hidden="true">
+        <span>준형이가 직접 만듦</span>
+        <span class="wonky-sticker">진짜임!</span>
+      </header>
+
+      <main id="app" tabindex="-1">
+        <section class="screen is-active" data-screen="welcome" aria-labelledby="welcome-title">
+          <div class="hero-doodle" aria-hidden="true">🌹💌🌹</div>
+          <p class="eyebrow">생일자 본인만 입장 가능</p>
+          <h1 id="welcome-title">🌹 성빈이 전용<br>생일 페이지 🌹</h1>
+          <p class="date-line">2026.07.23 / made by 준형</p>
+          <div class="question-card">
+            <p class="question">생일 축하를 받으시겠습니까?</p>
+            <div class="button-stack escape-zone" id="escape-zone">
+              <button class="button button-primary" type="button" data-action="accept">네, 받을게요</button>
+              <button class="button button-secondary" id="no-button" type="button">아니요</button>
+            </div>
+            <p class="status-text" id="refusal-message" aria-live="polite">신중하게 선택해주세요. (선택권 있음)</p>
+            <button class="button button-small is-hidden" id="give-up-button" type="button">알겠습니다...</button>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="positive" aria-labelledby="positive-title" hidden>
+          <div class="tape" aria-hidden="true"></div>
+          <p class="eyebrow">선택 오류가 수정되었습니다</p>
+          <h2 id="positive-title">다시 선택해주세요.</h2>
+          <p class="lead">생일 축하를 받을 준비가 되셨나요?</p>
+          <div class="button-grid">
+            <button class="button positive-choice" type="button">네</button>
+            <button class="button positive-choice" type="button">물론이죠</button>
+            <button class="button positive-choice" type="button">당연하죠</button>
+            <button class="button positive-choice" type="button">기다리고 있었죠</button>
+          </div>
+          <p class="tiny-note">※ 공정하고 자유로운 선택지입니다.</p>
+        </section>
+
+        <section class="screen" data-screen="confirm" aria-labelledby="confirm-title" hidden>
+          <div class="stamp" aria-hidden="true">FINAL<br>CHECK</div>
+          <p class="eyebrow">거의 다 왔어요</p>
+          <h2 id="confirm-title">마지막 확인</h2>
+          <p class="lead">성빈이 생일 축하 페이지에<br>입장하시겠습니까?</p>
+          <div class="button-stack">
+            <button class="button button-primary" type="button" data-action="enter">입장하기</button>
+            <button class="button button-secondary" id="cancel-button" type="button">취소</button>
+          </div>
+          <p class="status-text" id="cancel-message" aria-live="polite">취소 버튼도 정상 작동합니다. 아마도.</p>
+        </section>
+
+        <section class="screen celebration" data-screen="celebration" aria-labelledby="celebration-title" hidden>
+          <div class="celebration-hero">
+            <p class="eyebrow">🎂 오늘의 주인공 발견 🎂</p>
+            <h2 id="celebration-title">생일 축하해<br>성빈아 🌹</h2>
+            <p class="lead">오늘을 그냥 지나가게 하고 싶지 않아서<br>작은 페이지를 만들어봤어.</p>
+            <div class="scroll-hint" aria-hidden="true">아래에도 있어 ↓</div>
+          </div>
+
+          <article class="letter-card rose-card">
+            <span class="card-sticker" aria-hidden="true">🌹 꽃 담당</span>
+            <h3>오늘의 꽃 선정 사유</h3>
+            <p>붉은 장미를 고른 건 그냥 예뻐서만은 아니야.<br>네가 예전에 붉은 장미 얘기를 했던 게 기억났고,<br>붉은 장미의 꽃말이 사랑이라는 것도 네 생일에 잘 어울린다고 생각했어.</p>
+            <div class="reason-box">
+              <strong>선정 사유</strong>
+              <ol>
+                <li>예쁨</li>
+                <li>꽃말이 사랑임</li>
+                <li>성빈이가 전에 말한 적 있음</li>
+                <li>준형이가 기억해냄 <mark>← 중요</mark></li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="letter-card memory-card">
+            <span class="card-sticker" aria-hidden="true">💐 기억 저장됨</span>
+            <h3>기억하고 있는 것</h3>
+            <p>6월 9일에 네가 꽃이랑 편지 줬던 것도 아직 고맙게 기억하고 있어.<br>그때 네가 나를 생각해서 준비해준 마음이 정말 고마웠고,<br>이번에는 내가 네 생일에 그런 마음을 전해주고 싶었어.</p>
+          </article>
+
+          <article class="letter-card final-letter">
+            <span class="card-sticker" aria-hidden="true">💌 진심 100%</span>
+            <h3>마지막으로</h3>
+            <p>장난처럼 만들었지만,<br>오늘을 그냥 지나가게 하고 싶지 않았어.</p>
+            <p>생일 진짜 축하해.<br>태어나줘서 고맙고,<br>내 옆에 있어줘서 고마워.</p>
+            <p>오늘 하루가 오래 기억에 남는<br>생일이었으면 좋겠어.</p>
+            <p class="signature">— 준형이가</p>
+          </article>
+
+          <div class="ending">
+            <button class="button button-primary" id="again-button" type="button">생일 축하 한 번 더 받기</button>
+            <p class="tiny-note">버튼은 여러 번 눌러도 됩니다 🌹</p>
+          </div>
+        </section>
+      </main>
+
+      <footer>made with 사랑 + 약간의 JavaScript</footer>
+    </div>
+
+    <div id="burst-layer" class="burst-layer" aria-hidden="true"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
