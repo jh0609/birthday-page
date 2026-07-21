@@ -268,25 +268,6 @@ h3 { margin: 14px 0 16px; font-size: 25px; }
   transform: translateX(-50%);
 }
 
-.girl-name {
-  position: absolute;
-  z-index: 4;
-  bottom: -2px;
-  left: 50%;
-  min-width: 40px;
-  padding: 1px 7px 2px;
-  border: 1.5px solid var(--red-dark);
-  border-radius: 99px;
-  color: #fff;
-  background: var(--red);
-  box-shadow: 0 2px 0 var(--red-dark);
-  font-size: 10px;
-  font-weight: 900;
-  line-height: 1.35;
-  white-space: nowrap;
-  transform: translateX(-50%);
-}
-
 .love-drop {
   position: absolute;
   z-index: 3;
