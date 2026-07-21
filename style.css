@@ -249,19 +249,21 @@ h3 { margin: 14px 0 16px; font-size: 25px; }
   z-index: 4;
   left: 50%;
   bottom: 14px;
-  width: 58px;
-  height: 58px;
+  width: 64px;
+  height: 92px;
   transform: translateX(-50%);
   will-change: left;
 }
 
-.girl-emoji {
+.rem-player-image {
   position: absolute;
   z-index: 3;
-  top: -3px;
+  bottom: 5px;
   left: 50%;
-  font-size: 45px;
-  line-height: 1;
+  display: block;
+  width: auto;
+  height: 87px;
+  object-fit: contain;
   filter: drop-shadow(0 3px 0 rgba(131, 24, 43, 0.2));
   transform: translateX(-50%);
 }
